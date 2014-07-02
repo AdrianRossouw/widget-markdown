@@ -6,26 +6,22 @@ require('famous-polyfills');
 
 // import dependencies
 var Engine = require('famous/core/Engine');
+var View = require('famous/core/View');
 var Modifier = require('famous/core/Modifier');
-var Transform = require('famous/core/Transform');
-var ImageSurface = require('famous/surfaces/ImageSurface');
+
+// Load Markdown Widget
+var WidetMarkdown = require('./lib/widget');
 
 // create the main context
 var mainContext = Engine.createContext();
 
-// your app here
-var logo = new ImageSurface({
-  size: [200, 200],
-  content: 'images/famous_logo.png',
-  classes: ['backfaceVisibility']
+var view = new View();
+
+var markdown = WidetMarkdown('#This is a test\n##Of using markdown');
+
+var centerModifier = new Modifier({
+  origin: [0.5, 0.5]
 });
 
-var initialTime = Date.now();
-var centerSpinModifier = new Modifier({
-  origin: [0.5, 0.5],
-  transform : function() {
-    return Transform.rotateY(.002 * (Date.now() - initialTime));
-  }
-});
-
-mainContext.add(centerSpinModifier).add(logo);
+view.add(centerModifier).add(markdown.view);
+mainContext.add(view);

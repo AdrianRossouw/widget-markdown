@@ -21,7 +21,9 @@
   "dependencies": {
     "brfs": "^1.1.1",
     "cssify": "^0.5.1",
-    "polyfills": "git+ssh://git@github.com:famous/polyfills.git",
-    "famous": "http://code.famo.us/famous/common/famous-0.2.2.tar.gz"
+    "famous": "http://code.famo.us/famous/common/famous-0.2.2.tar.gz",
+    "marked": "^0.3.2",
+    "peacock": "^0.2.0",
+    "polyfills": "git+ssh://git@github.com:famous/polyfills.git"
   }
 }
