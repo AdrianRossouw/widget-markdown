@@ -2,7 +2,7 @@
   "name": "widget-markdown",
   "version": "0.0.1",
   "description": "a widget for including markdown in your app",
-  "main": "src/index.js",
+  "main": "src/lib/widget.js",
   "scripts": {
     "test": "npm run-script lint --loglevel silent",
     "build": "browserify src/index.js -t cssify -t brfs -o static/bundle.js",

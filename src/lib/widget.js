@@ -29,12 +29,8 @@ function widgetMarkdown(content) {
   };
 
   that.ee.on('update', function(key, value, prev) {
-    if (key === 'markdown') {
-      return that.update('html', renderMd(value));;
-    }
-    if (key === 'html') {
-      return that.view.setContent(that.model.html);
-    }
+    if (key === 'markdown') return that.update('html', renderMd(value));
+    if (key === 'html') return that.view.setContent(that.model.html);
   });
 
   that.init = function() {
